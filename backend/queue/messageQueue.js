@@ -1,6 +1,6 @@
 const amqp = require('amqplib');
-const Author = require('./models/Author'); // Modelo de autores
-const Publisher = require('./models/Publisher'); // Modelo de editoriales
+const Author = require('../models/Author'); // Modelo de autores
+const Publisher = require('../models/Publisher'); // Modelo de editoriales
 
 // Configuración de la conexión AMQP
 const RABBITMQ_URL = process.env.RABBITMQ_URL || 'amqps://smczupur:ab7qbZqhEorf2cEqe3QJMv7uk7bRoAlc@cow.rmq2.cloudamqp.com/smczupur';

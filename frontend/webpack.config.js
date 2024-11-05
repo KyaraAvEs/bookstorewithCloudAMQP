@@ -29,7 +29,9 @@ module.exports = {
     }),
   ],
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
-    port: 3000,
+    static: path.join(__dirname, 'dist'), // Cambia contentBase a static
+    port: 3000, 
+    open: true, 
+    hot: true,
   },
 };
