@@ -1,4 +1,34 @@
+import express from 'express';
 import connectRabbitMQ from './config/rabbitmq.js';
+
+const app = express();
+const PORT = 3001; // Puedes cambiar el puerto según tus necesidades
+
+// Iniciar conexión a RabbitMQ
+const init = async () => {
+  try {
+    await connectRabbitMQ();
+    console.log('RabbitMQ conectado y listo');
+  } catch (error) {
+    console.error('Error al iniciar la conexión con RabbitMQ:', error);
+  }
+};
+
+// Configurar una ruta de prueba
+app.get('/api/test', (req, res) => {
+  res.json({ message: 'API Test funcionando correctamente' });
+});
+
+// Iniciar el servidor
+app.listen(PORT, () => {
+  console.log(`Servidor corriendo en el puerto ${PORT}`);
+});
+
+// Llamar a la función de inicialización de RabbitMQ
+init();
+
+
+/* import connectRabbitMQ from './config/rabbitmq.js';
 
 const init = async () => {
   try {
@@ -10,7 +40,7 @@ const init = async () => {
 };
 
 init();
-
+ */
 
 
 /* const express = require('express');

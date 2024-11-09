@@ -30,7 +30,7 @@ module.exports = {
   ],
   devServer: {
     static: path.join(__dirname, 'dist'), // Cambia contentBase a static
-    port: 3000, 
+    port: 3002, 
     open: true, 
     hot: true,
   },
